@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check - Splitting App</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>💰 Check Splitting</h1>
+      <div class="header-info">
+        <div id="shareCodeDisplay" class="share-code">
+          Share Code: <span id="shareCode">Loading...</span>
+          <button id="copyCodeBtn" class="btn-small">Copy</button>
+        </div>
+        <div id="participantName" class="participant-name"></div>
+      </div>
+    </header>
+
+    <div id="finalizedBanner" class="finalized-banner" style="display: none;">
+      ✓ Check Finalized
+    </div>
+
+    <main class="check-view">
+      <!-- Items Section -->
+      <section class="card">
+        <h2>Items</h2>
+        <div id="itemsList" class="items-list"></div>
+
+        <div id="addItemForm" class="add-item-form">
+          <h3>Add Item</h3>
+          <div class="form-row">
+            <input type="text" id="itemName" placeholder="Item name" class="flex-grow">
+            <input type="number" id="itemPrice" placeholder="Price" step="0.01" min="0" style="width: 100px;">
+            <input type="number" id="itemQuantity" placeholder="Qty" min="1" value="1" style="width: 70px;">
+          </div>
+          <div class="form-row">
+            <label><input type="checkbox" id="itemIsTax"> Tax</label>
+            <label><input type="checkbox" id="itemIsService"> Service Charge</label>
+            <button id="addItemBtn" class="btn">Add Item</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Participants Section -->
+      <section class="card">
+        <h2>Participants</h2>
+        <div id="participantsList" class="participants-list"></div>
+      </section>
+
+      <!-- Tip & Finalization Section -->
+      <section class="card">
+        <h2>Tip & Finalization</h2>
+        <div class="form-group">
+          <label for="tipAmount">Tip Amount ($)</label>
+          <input type="number" id="tipAmount" placeholder="0.00" step="0.01" min="0">
+          <button id="setTipBtn" class="btn">Set Tip</button>
+        </div>
+
+        <div class="finalize-section">
+          <button id="finalizeBtn" class="btn btn-primary">Finalize Check</button>
+          <button id="unlockBtn" class="btn" style="display: none;">Unlock Check</button>
+        </div>
+
+        <div id="validationError" class="error" style="display: none;"></div>
+      </section>
+
+      <!-- Breakdown Section -->
+      <section id="breakdownSection" class="card" style="display: none;">
+        <h2>Breakdown</h2>
+        <div id="breakdownContent"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/check-app.js"></script>
+</body>
+</html>

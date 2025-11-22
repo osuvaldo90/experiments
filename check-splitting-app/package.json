@@ -1,0 +1,27 @@
+{
+  "name": "check-splitting-app",
+  "version": "1.0.0",
+  "description": "A real-time collaborative check splitting application",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
+  },
+  "keywords": ["check-splitting", "bill-splitting", "real-time", "collaborative"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^12.4.6",
+    "express": "^5.1.0",
+    "nanoid": "^5.1.6",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "socket.io-client": "^4.8.1",
+    "supertest": "^7.1.4"
+  }
+}

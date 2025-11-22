@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Splitting App</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>💰 Check Splitting App</h1>
+      <p>Split restaurant bills with friends in real-time</p>
+    </header>
+
+    <main class="home">
+      <div class="card">
+        <h2>Create New Check</h2>
+        <p>Start a new check and share the code with your group</p>
+        <button id="createCheckBtn" class="btn btn-primary">Create New Check</button>
+      </div>
+
+      <div class="card">
+        <h2>Join Existing Check</h2>
+        <p>Enter the share code to join a check</p>
+        <div class="form-group">
+          <input
+            type="text"
+            id="shareCodeInput"
+            placeholder="Enter share code"
+            maxlength="8"
+            style="text-transform: uppercase;"
+          >
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            id="nameInput"
+            placeholder="Enter your name"
+          >
+        </div>
+        <button id="joinCheckBtn" class="btn btn-primary">Join Check</button>
+      </div>
+
+      <div id="error" class="error" style="display: none;"></div>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
